@@ -1,7 +1,4 @@
-"use client"
-
-import { useState } from "react"
-import { ChevronDown, Check } from "lucide-react"
+import { Check } from "lucide-react"
 
 const features = [
   "10 Shelf Pullouts",
@@ -11,34 +8,18 @@ const features = [
 ]
 
 export function FeatureDropdown() {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <div className="relative">
       {/* Gradient border wrapper */}
       <div className="p-[2px] rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between px-4 py-3 bg-background rounded-[10px] transition-colors hover:bg-secondary/50"
-          aria-expanded={isOpen}
-          aria-controls="feature-list"
-        >
-          <span className="text-sm font-medium text-foreground">Features</span>
-          <ChevronDown 
-            className={`h-4 w-4 text-accent transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-          />
-        </button>
-      </div>
-
-      {/* Dropdown content */}
-      <div
-        id="feature-list"
-        className={`overflow-hidden transition-all duration-300 ease-out ${
-          isOpen ? 'max-h-64 opacity-100 mt-2' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="p-[2px] rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700">
-          <ul className="bg-background rounded-[10px] py-2 px-1">
+        <div className="bg-background rounded-[10px] overflow-hidden">
+          {/* Header */}
+          <div className="px-4 py-3 border-b border-border/50">
+            <span className="text-sm font-medium text-foreground">Features</span>
+          </div>
+          
+          {/* Features list - always visible */}
+          <ul className="py-2 px-1">
             {features.map((feature, index) => (
               <li 
                 key={index}
