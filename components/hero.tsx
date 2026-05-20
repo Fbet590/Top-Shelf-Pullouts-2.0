@@ -42,32 +42,12 @@ export function Hero() {
               Forget the $30,000 remodel. Have your kitchen repainted and add pullouts for organization.
             </p>
 
-            <div className="flex items-center gap-8 pt-4">
-              <div>
-                <p className="font-serif text-3xl text-white">2M+</p>
-                <p className="text-sm text-amber-100/60">Shelves Sold</p>
-              </div>
-              <div className="w-px h-10 bg-white/20" />
-              <div>
-                <p className="font-serif text-3xl text-white">20+</p>
-                <p className="text-sm text-amber-100/60">Years Experience</p>
-              </div>
-              <div className="w-px h-10 bg-white/20" />
-              <div>
-                <p className="font-serif text-3xl text-white">5.0</p>
-                <p className="text-sm text-amber-100/60">Star Rating</p>
-              </div>
-            </div>
-
-            {/* Trust badges */}
-            <div className="flex items-center gap-4 pt-2">
-              <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <span className="text-sm font-medium text-white">Limited Lifetime Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <span className="text-sm font-medium text-white">Free Estimates</span>
-              </div>
-            </div>
+            <a 
+              href="#hero-form" 
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-full transition-colors shadow-lg hover:shadow-xl w-fit"
+            >
+              SEE IF MY SPACE QUALIFIES
+            </a>
           </div>
 
           {/* Lead Capture Form */}
