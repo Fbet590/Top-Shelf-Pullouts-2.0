@@ -46,8 +46,8 @@ export function Hero() {
               href="#hero-form" 
               className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold tracking-wide text-white rounded-full w-fit overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 bg-[length:200%_100%] animate-shimmer" />
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-[length:200%_100%] animate-shimmer" />
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="absolute inset-[2px] rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-50" />
               <span className="relative flex items-center gap-2">
                 SEE IF MY SPACE QUALIFIES
