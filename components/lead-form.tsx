@@ -225,33 +225,14 @@ export function LeadForm() {
 
   async function handleSubmit() {
     setIsSubmitting(true)
-    const payload = {
-      name,
-      email,
-      phone,
-      rooms: [],
-      services: [],
-      budget: "$1,200 Flat - 6 Pullouts",
-    }
-    console.log("[v0] Submitting form to webhook with payload:", payload)
     try {
-      const response = await fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/bfaf5dec-cc88-409f-8ee2-2a4c9ce8e4ea", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-      console.log("[v0] Webhook response status:", response.status)
-      console.log("[v0] Webhook response ok:", response.ok)
       // Fire Facebook Lead conversion event
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
-          content_name: "6 Pullouts $1200 Qualification Form",
+          content_name: "Kitchen Facelift Package",
           content_category: "Pull Out Shelves",
-          value: 1200,
+          value: 11500,
         })
-        console.log("[v0] Facebook Lead event fired")
       }
       setSubmitted(true)
     } catch (error) {
