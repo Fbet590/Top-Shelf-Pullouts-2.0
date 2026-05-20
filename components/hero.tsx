@@ -34,7 +34,7 @@ export function Hero() {
             </div>
 
             <h1 className="font-serif text-[3.25rem] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] leading-tight text-white">
-              <span className="block mb-4">Stop Digging Through Your Cabinets!</span>
+              <span className="block mb-4">A new kitchen. $11,500 flat.</span>
               <span className="block">Custom Pullouts. <span className="text-amber-400">$1,200 Flat.</span></span>
             </h1>
 
