@@ -44,9 +44,17 @@ export function Hero() {
 
             <a 
               href="#hero-form" 
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-full transition-colors shadow-lg hover:shadow-xl w-fit"
+              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold tracking-wide text-white rounded-full w-fit overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              SEE IF MY SPACE QUALIFIES
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-[length:200%_100%] animate-shimmer" />
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="absolute inset-[2px] rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-50" />
+              <span className="relative flex items-center gap-2">
+                SEE IF MY SPACE QUALIFIES
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </a>
           </div>
 
@@ -54,7 +62,7 @@ export function Hero() {
           <div id="hero-form" className="bg-background rounded-2xl p-6 lg:p-8 shadow-2xl border-2 border-accent/30 scroll-mt-24 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent" />
             <div className="flex flex-col gap-4 pb-5 border-b border-border mb-5">
-              <h2 className="font-serif text-[28px] sm:text-[32px] text-foreground leading-tight">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
+              <h2 className="font-serif text-[30px] sm:text-[36px] text-foreground leading-tight font-semibold">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
               <FeatureDropdown />
             </div>
             <LeadForm />
