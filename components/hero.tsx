@@ -1,6 +1,7 @@
 import Image from "next/image"
-import { Star } from "lucide-react"
+import { Star, ChevronDown } from "lucide-react"
 import { LeadForm } from "@/components/lead-form"
+import { FeatureDropdown } from "@/components/feature-dropdown"
 
 export function Hero() {
   return (
@@ -72,11 +73,9 @@ export function Hero() {
           {/* Lead Capture Form */}
           <div id="hero-form" className="bg-background rounded-2xl p-6 lg:p-8 shadow-2xl border-2 border-accent/30 scroll-mt-24 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent" />
-            <div className="flex flex-col gap-1 pb-5 border-b border-border mb-5">
-              <h2 className="font-serif text-[28px] sm:text-[32px] text-foreground leading-tight">10 Pullouts & Cabinet Door Repainting — <span className="text-accent">$11,500 Flat</span></h2>
-              <p className="text-[18px] sm:text-[20px] text-muted-foreground">
-                {"Replace and repaint your cabinet doors to your desired color. Fill out the form for a free estimate!"}
-              </p>
+            <div className="flex flex-col gap-4 pb-5 border-b border-border mb-5">
+              <h2 className="font-serif text-[26px] sm:text-[30px] text-foreground leading-tight">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
+              <FeatureDropdown />
             </div>
             <LeadForm />
           </div>
