@@ -1,6 +1,7 @@
 import Image from "next/image"
-import { Star } from "lucide-react"
+import { Star, ChevronDown } from "lucide-react"
 import { LeadForm } from "@/components/lead-form"
+import { FeatureDropdown } from "@/components/feature-dropdown"
 
 export function Hero() {
   return (
@@ -34,12 +35,11 @@ export function Hero() {
             </div>
 
             <h1 className="font-serif text-[3.25rem] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] leading-tight text-white">
-              <span className="block mb-4">Stop Digging Through Your Cabinets!</span>
-              <span className="block">Custom Pullouts. <span className="text-amber-400">$1,200 Flat.</span></span>
+              <span className="block">A new kitchen. <span className="text-amber-400">$11,500 flat.</span></span>
             </h1>
 
-            <p className="text-lg leading-relaxed text-amber-100/80 max-w-lg">
-              We handle everything from design to install — you just enjoy the result.
+            <p className="text-xl sm:text-2xl leading-relaxed text-amber-100/90 max-w-lg font-light">
+              Forget the $30,000 remodel. Have your kitchen repainted and add pullouts for organization.
             </p>
 
             <div className="flex items-center gap-8 pt-4">
@@ -73,11 +73,9 @@ export function Hero() {
           {/* Lead Capture Form */}
           <div id="hero-form" className="bg-background rounded-2xl p-6 lg:p-8 shadow-2xl border-2 border-accent/30 scroll-mt-24 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent" />
-            <div className="flex flex-col gap-1 pb-5 border-b border-border mb-5">
-              <h2 className="font-serif text-[35px] text-foreground leading-tight">Get 6 Custom Pullouts Installed — <span className="text-accent">$1,200 Flat</span></h2>
-              <p className="text-[20px] text-muted-foreground">
-                {"See if your space qualifies! Most kitchens do! Fill out the form and we'll come take a look — free."}
-              </p>
+            <div className="flex flex-col gap-4 pb-5 border-b border-border mb-5">
+              <h2 className="font-serif text-[26px] sm:text-[30px] text-foreground leading-tight">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
+              <FeatureDropdown />
             </div>
             <LeadForm />
           </div>
