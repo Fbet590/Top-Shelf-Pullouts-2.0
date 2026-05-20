@@ -235,7 +235,7 @@ export function LeadForm() {
     }
     console.log("[v0] Submitting form to webhook with payload:", payload)
     try {
-      const response = await fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/b4f002c9-b2bf-454b-bab9-af2c30c83643", {
+      const response = await fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/bfaf5dec-cc88-409f-8ee2-2a4c9ce8e4ea", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
