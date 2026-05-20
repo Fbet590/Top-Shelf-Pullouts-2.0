@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Star } from "lucide-react"
 import { LeadForm } from "@/components/lead-form"
 import { FeatureDropdown } from "@/components/feature-dropdown"
 
@@ -23,17 +22,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Text Content */}
           <div className="flex flex-col gap-8">
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <span className="text-sm text-amber-100/70">
-                5.0 stars on Yelp & Google
-              </span>
-            </div>
-
             <h1 className="font-serif text-[3.875rem] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] leading-tight text-white">
               <span className="block">A new kitchen. <span className="text-amber-400">$11,500 flat.</span></span>
             </h1>
@@ -62,7 +50,7 @@ export function Hero() {
           <div id="hero-form" className="bg-background rounded-2xl p-6 lg:p-8 shadow-2xl border-2 border-accent/30 scroll-mt-24 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent" />
             <div className="flex flex-col gap-4 pb-5 border-b border-border mb-5">
-              <h2 className="font-serif text-[30px] sm:text-[36px] text-foreground leading-tight font-semibold">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
+              <h2 className="font-serif text-[37px] sm:text-[43px] text-foreground leading-tight font-semibold">The Kitchen Facelift Package — <span className="text-accent">$11,500 Flat</span></h2>
               <FeatureDropdown />
             </div>
             <LeadForm />
