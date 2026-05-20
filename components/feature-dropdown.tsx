@@ -15,7 +15,7 @@ export function FeatureDropdown() {
         <div className="bg-background rounded-[10px] overflow-hidden">
           {/* Header */}
           <div className="px-4 py-3 border-b border-border/50">
-            <span className="text-sm font-medium text-foreground">Features</span>
+            <span className="text-sm font-semibold text-foreground">Features</span>
           </div>
           
           {/* Features list - always visible */}
@@ -23,7 +23,7 @@ export function FeatureDropdown() {
             {features.map((feature, index) => (
               <li 
                 key={index}
-                className="flex items-center gap-3 px-3 py-2.5 text-sm text-foreground"
+                className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-foreground"
               >
                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center">
                   <Check className="h-3 w-3 text-accent" />
