@@ -225,7 +225,21 @@ export function LeadForm() {
 
   async function handleSubmit() {
     setIsSubmitting(true)
+    const payload = {
+      name,
+      email,
+      phone,
+      package: "Kitchen Facelift Package",
+      value: 11500,
+    }
     try {
+      const response = await fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/3cfed59d-6435-45d2-813d-f6332b00f6e1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
       // Fire Facebook Lead conversion event
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
