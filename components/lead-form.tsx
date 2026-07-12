@@ -226,14 +226,14 @@ export function LeadForm() {
   async function handleSubmit() {
     setIsSubmitting(true)
     const payload = {
-      name,
-      email,
-      phone,
+      full_name: name,
+      email: email,
+      phone: phone,
       package: "Kitchen Facelift Package",
       value: 11500,
     }
     try {
-      await Promise.all([
+      const results = await Promise.allSettled([
         fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/3cfed59d-6435-45d2-813d-f6332b00f6e1", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -245,6 +245,11 @@ export function LeadForm() {
           body: JSON.stringify(payload),
         }),
       ])
+      results.forEach((result, i) => {
+        if (result.status === "rejected") {
+          console.error(`[v0] Webhook ${i === 0 ? "LeadConnector" : "Zapier"} failed:`, result.reason)
+        }
+      })
       // Fire Facebook Lead conversion event
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
