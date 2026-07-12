@@ -40,7 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <head />
+      <body className={`${_inter.variable} ${_dmSerif.variable} font-sans antialiased`}>
+        {children}
+        <Analytics />
+        {/* Facebook Pixel — single script with stub + dynamic loader, matching official snippet exactly */}
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
@@ -56,6 +60,7 @@ export default function RootLayout({
           `}
         </Script>
         <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             height="1"
             width="1"
@@ -64,10 +69,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-      </head>
-      <body className={`${_inter.variable} ${_dmSerif.variable} font-sans antialiased`}>
-        {children}
-        <Analytics />
       </body>
     </html>
   )

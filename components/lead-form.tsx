@@ -223,6 +223,25 @@ export function LeadForm() {
     return () => clearTimeout(timeout)
   }, [isAnimating, direction])
 
+  function fireLeadPixel() {
+    const params = {
+      content_name: "Kitchen Facelift Package",
+      content_category: "Pull Out Shelves",
+      currency: "USD",
+      value: 11500,
+    }
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", params)
+    } else {
+      // fbq not ready yet — retry once after 1s
+      setTimeout(() => {
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", params)
+        }
+      }, 1000)
+    }
+  }
+
   async function handleSubmit() {
     setIsSubmitting(true)
     try {
@@ -231,19 +250,12 @@ export function LeadForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone }),
       })
-      // Fire Facebook Lead conversion event
-      if (typeof window !== "undefined" && typeof window.fbq === "function") {
-        window.fbq("track", "Lead", {
-          content_name: "Kitchen Facelift Package",
-          content_category: "Pull Out Shelves",
-          value: 11500,
-        })
-      }
-      setSubmitted(true)
     } catch (error) {
       console.error("[v0] Form submission error:", error)
-      setSubmitted(true)
     } finally {
+      // Always fire the Pixel Lead event regardless of webhook success/failure
+      fireLeadPixel()
+      setSubmitted(true)
       setIsSubmitting(false)
     }
   }
