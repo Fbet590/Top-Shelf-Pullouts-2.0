@@ -231,19 +231,19 @@ export function LeadForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone }),
       })
-      // Fire Facebook Lead conversion event
+    } catch (error) {
+      console.error("[v0] Form submission error:", error)
+    } finally {
+      // Always fire the Pixel Lead event regardless of webhook success/failure
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
           content_name: "Kitchen Facelift Package",
           content_category: "Pull Out Shelves",
+          currency: "USD",
           value: 11500,
         })
       }
       setSubmitted(true)
-    } catch (error) {
-      console.error("[v0] Form submission error:", error)
-      setSubmitted(true)
-    } finally {
       setIsSubmitting(false)
     }
   }
