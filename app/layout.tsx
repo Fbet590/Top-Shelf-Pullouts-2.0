@@ -44,17 +44,20 @@ export default function RootLayout({
       <body className={`${_inter.variable} ${_dmSerif.variable} font-sans antialiased`}>
         {children}
         <Analytics />
-        {/* Facebook Pixel — strategy="afterInteractive" must live in <body>, not <head> */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        {/* Facebook Pixel */}
+        <Script id="facebook-pixel" strategy="afterInteractive" src="https://connect.facebook.net/en_US/fbevents.js" />
+        <Script id="facebook-pixel-init" strategy="afterInteractive">
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
+            window.fbq = window.fbq || function() {
+              window.fbq.callMethod
+                ? window.fbq.callMethod.apply(window.fbq, arguments)
+                : window.fbq.queue.push(arguments);
+            };
+            if (!window._fbq) window._fbq = window.fbq;
+            window.fbq.push = window.fbq;
+            window.fbq.loaded = true;
+            window.fbq.version = '2.0';
+            window.fbq.queue = window.fbq.queue || [];
             fbq('init', '172947360045746');
             fbq('track', 'PageView');
           `}
