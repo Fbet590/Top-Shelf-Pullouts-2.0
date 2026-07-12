@@ -239,7 +239,7 @@ export function LeadForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         }),
-        fetch("https://hooks.zapier.com/hooks/catch/24750736/4uq5zo3/", {
+        fetch("https://hooks.zapier.com/hooks/catch/24750736/4uq5w45/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
