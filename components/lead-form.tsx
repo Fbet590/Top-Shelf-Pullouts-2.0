@@ -233,13 +233,18 @@ export function LeadForm() {
       value: 11500,
     }
     try {
-      const response = await fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/3cfed59d-6435-45d2-813d-f6332b00f6e1", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
+      await Promise.all([
+        fetch("https://services.leadconnectorhq.com/hooks/AQO9rTexfaPKZhlT1L3h/webhook-trigger/3cfed59d-6435-45d2-813d-f6332b00f6e1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+        fetch("https://hooks.zapier.com/hooks/catch/24750736/4uq5zo3/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+      ])
       // Fire Facebook Lead conversion event
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
